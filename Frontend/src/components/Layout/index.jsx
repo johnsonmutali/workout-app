@@ -11,7 +11,7 @@ import {
 export default function Layout() {
   return (
     <div id="container">
-      <header>
+      <div class="header">
         <div class="logo">h_gym</div>
         <nav class="nav">
           <NavLink to="/">home</NavLink>
@@ -25,7 +25,7 @@ export default function Layout() {
             <NavLink to="">sign up</NavLink>
           </div>
         </div>
-      </header>
+      </div>
       <div class="main">
         <Outlet />
       </div>

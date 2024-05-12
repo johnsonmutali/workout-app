@@ -2,7 +2,7 @@
 git-crypt-key-workout-app
 
 #ignore the .env file
-Backend/.env
+.env
 
 #ignore the gitattributes file
 .gitattributes
