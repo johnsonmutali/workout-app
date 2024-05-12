@@ -1,0 +1,8 @@
+#ignore the git-crypt-key
+git-crypt-key-workout-app
+
+#ignore the .env file
+Backend/.env
+
+#ignore the gitattributes file
+.gitattributes
