@@ -1,21 +1,12 @@
 const Workout = require("../models/workout.js")
 
-const postWorkout = async (req, res) => {
-  const { title, reps, load } = req.body
 
-  try {
-    const workout = await Workout.create(req.body)
-    res.status(200).json(workout)
-  } catch (err) {
-    res.status(400).json({ err: err.message })
-  }
-}
 
-const createWorkout = async (req, res) => {
+const postGym = async (req, res) => {
   const workout = new Workout(req.body)
-
+  console.log(workout)
   workout.save()
-    .then(result => res.redirect("/"))
+    .then(result => res.redirect("/gym"))
     .catch(err => console.log(err))
 }
 
@@ -25,10 +16,19 @@ const getHome = async (req, res) => {
 const getCreate = async (req, res) => {
   res.render("create")
 }
+const getGym = async (req, res) => {
+  Workout.find()
+    .then(result => {
+      res.render("gym", { workouts: result })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
 
 module.exports = {
-  postWorkout,
-  createWorkout,
+  postGym,
   getHome,
-  getCreate
+  getCreate,
+  getGym
 }

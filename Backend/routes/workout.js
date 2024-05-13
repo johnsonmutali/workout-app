@@ -2,15 +2,15 @@ const express = require("express")
 const router = express.Router()
 const Workout = require("../models/workout.js")
 const {
-  postWorkout,
-  createWorkout,
+  postGym,
   getHome,
-  getCreate
+  getCreate,
+  getGym
 } = require("../controllers/workoutController.js")
 
 router.get("/", getHome)
-router.post("/", postWorkout)
-router.post("/", createWorkout)
+router.post("/gym", postGym)
 router.get("/create", getCreate)
+router.get("/gym", getGym)
 
 module.exports = router
