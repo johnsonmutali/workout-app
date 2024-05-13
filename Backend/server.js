@@ -2,9 +2,15 @@ const express = require("express")
 const mongoose = require("mongoose")
 require("dotenv").config()
 
+const workoutRoutes = require("./routes/workout.js")
+
 const app = express()
 const dbURI = process.env.DB_URI
 
+
+//middleware
+app.use(express.json())
+app.use(workoutRoutes)
 
 mongoose.connect(dbURI)
   .then(res => {
@@ -13,5 +19,5 @@ mongoose.connect(dbURI)
   })
   .catch(err => console.log(err))
 
+app.set("view engine", "ejs")
 
-app.set("view engines", "ejs")

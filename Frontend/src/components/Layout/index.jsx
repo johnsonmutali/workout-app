@@ -12,12 +12,12 @@ export default function Layout() {
   return (
     <div id="container">
       <div class="header">
-        <div class="logo">h_gym</div>
-        <nav class="nav">
+        <NavLink to="/" class="logo">h_gym</NavLink>
+        <div class="nav">
           <NavLink to="/">home</NavLink>
           <NavLink to="gym">gym</NavLink>
           <NavLink to="about">about</NavLink>
-        </nav>
+        </div>
         <div class="profile-toggle">
           <div class="drop-dowm">
             <NavLink to="#">log in</NavLink>

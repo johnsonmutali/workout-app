@@ -1,17 +1,28 @@
-#container {
-  min-block-size: 100svh;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: red;
+  
+  
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .nav {
     
-    .logo {
-      font-size: 3rem;
-      font-weight: bold;
-      letter-spacing: 2px;
+    a {
+      display: inline-block;
+      margin-inline: 2rem;
+      text-transform: capitalize;
+      padding: .75rem;
+      
+      .active {
+        border-block-end: 1px solid red;
+      }
     }
   }
 }
