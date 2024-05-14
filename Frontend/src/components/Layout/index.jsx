@@ -11,22 +11,22 @@ import {
 export default function Layout() {
   return (
     <div id="container">
-      <div class="header">
-        <NavLink to="/" class="logo">h_gym</NavLink>
-        <div class="nav">
+      <div className="header">
+        <NavLink to="/" className="logo">h_gym</NavLink>
+        <div className="nav">
           <NavLink to="/">home</NavLink>
           <NavLink to="gym">gym</NavLink>
           <NavLink to="about">about</NavLink>
         </div>
-        <div class="profile-toggle">
-          <div class="drop-dowm">
+        <div className="profile-toggle">
+          <div className="drop-dowm">
             <NavLink to="#">log in</NavLink>
             <NavLink to="#">log out</NavLink>
             <NavLink to="">sign up</NavLink>
           </div>
         </div>
       </div>
-      <div class="main">
+      <div className="main">
         <Outlet />
       </div>
       <Footer />

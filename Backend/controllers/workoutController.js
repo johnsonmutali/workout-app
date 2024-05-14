@@ -1,7 +1,6 @@
 const Workout = require("../models/workout.js")
 
 
-
 const postGym = async (req, res) => {
   const workout = new Workout(req.body)
   console.log(workout)
@@ -17,13 +16,13 @@ const getCreate = async (req, res) => {
   res.render("create")
 }
 const getGym = async (req, res) => {
-  Workout.find()
-    .then(result => {
-      res.render("gym", { workouts: result })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  try {
+    const workouts = await Workout.find({})
+    console.log(workouts)
+    res.status(200).json(workouts)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 module.exports = {
