@@ -1,7 +1,10 @@
-import "./index.scss"
 import {
   useState, useEffect
 } from "react"
+
+//pages
+import "./index.scss"
+import Form from "../Form"
 
 export default function Gym() {
   //states
@@ -27,18 +30,19 @@ export default function Gym() {
   console.log("workouts: ", workouts)
   return (
     <div id="gym">
-      <ul class="workout-list">
+      <ul className="workout-list">
         <h1>workout list</h1>
         {
           workouts && workouts.map(workout => (
-            <li class="workout" key={workout._id}>
-              <h3 class="workout-title">{workout.title}</h3>
+            <li className="workout" key={workout._id}>
+              <h3 className="workout-title">{workout.title}</h3>
               <p>preps: {workout.preps}</p>
               <p>load: {workout.load}</p>
             </li>
           ))
         }
       </ul>
-    </div >
+      <Form />
+    </div>
   )
 }
