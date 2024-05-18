@@ -1,9 +1,11 @@
 import "./index.scss"
 import { useState } from "react"
+import { useWorkoutsContext } from "../../hooks/useWorkoutsContext.jsx"
 
 
 export default function Form() {
   //form states
+  const { dispatch } = useWorkoutsContext()
   const [title, setTitle] = useState("")
   const [preps, setPreps] = useState("")
   const [load, setLoad] = useState("")
@@ -35,6 +37,7 @@ export default function Form() {
       setLoad("")
       setError(null)
       console.log("new workout added: ", data)
+      dispatch({ type: "ADD_WORKOUT", payload: data })
     }
   }
   return (
@@ -75,7 +78,7 @@ export default function Form() {
       </label>
       <button className="form-submit-btn">submit</button>
       {
-      error && <div className="error-msg">{error}</div>
+        error && <div className="error-msg">{error}</div>
       }
     </form>
   )
